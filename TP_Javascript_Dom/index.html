@@ -24,17 +24,26 @@
         </header>
 
         <form class="container rounded-3 shadow-lg" style="padding: 1%; width: 30%; ">
-            <div class="mb-3">
+            <div class="mb-2">
                 <label for="" class="form-label">Nom</label>
                 <input
                     type="text"
                     class="form-control"
-                    name=""
-                    id=""
+                    id="Nom"
                     aria-describedby="helpId"
                     placeholder=""
                 />
-                <small id="helpId" class="form-text text-muted">Help text</small>
+            </div>
+
+            <div class="mb-2">
+                <label for="" class="form-label">Prenom</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="Prenom"
+                    aria-describedby="helpId"
+                    placeholder=""
+                />
             </div>
             
             <div class="mb-2">
@@ -47,13 +56,35 @@
                     placeholder="abc@mail.com"
                 />
             </div>
+
             <div class="mb-2">
-                <label for="password" class="form-label">Password</label>
+                <label for="" class="form-label">Pseudot</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    name="Pseudot"
+                    id="Pseudot"
+                    aria-describedby="helpId"
+                    placeholder=""
+                />
+            </div>
+
+
+            <div class="mb-2">
+                <label for="password" class="form-label">mot de passe</label>
                 <input
                     type="password"
                     class="form-control"
                     id="password"
                 />
+
+                <div class="mb-2">
+                    <label for="password" class="form-label">verification de mot de passe</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                    />
             </div>
             <div class="d-flex justify-content-start">
                 <a
@@ -61,11 +92,6 @@
                     href="liste.html"
                     role="button"
                     >Login</a>
-                <a
-                    class="btn btn-primary"
-                    href="#"
-                    role="button"
-                    >Sign in</a>
             </div>
         </form>
 
