@@ -67,6 +67,47 @@
             background-color: #0056b3;
         }
 
+        .directory-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .directory-link {
+            display: block;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .directory-link:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+            color: var(--primary-color);
+        }
+
+        .directory-link i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .btn-yellow {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: #000;
+            font-weight: 500;
+        }
+        
+        .btn-yellow:hover {
+            background-color: #e6a600;
+            border-color: #e6a600;
+            color: #000;
+        }
+
     </style>
 </head>
 <body>
@@ -117,12 +158,12 @@
 <script>
     function verif() {
         // Récupération des valeurs des champs avec trim()
-        var nom = document.getElementById("Nom").value.trim();
-        var prenom = document.getElementById("Prenom").value.trim();
-        var email = document.getElementById("email").value.trim();
-        var pseudot = document.getElementById("Pseudot").value.trim();
-        var password = document.getElementById("password").value.trim();
-        var passwordV = document.getElementById("passwordV").value.trim();
+        let nom = document.getElementById("Nom").value.trim();
+        let prenom = document.getElementById("Prenom").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let pseudot = document.getElementById("Pseudot").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let passwordV = document.getElementById("passwordV").value.trim();
 
         // Vérification des champs vides
         if (!nom || !prenom || !email || !pseudot || !password || !passwordV) {
@@ -131,7 +172,7 @@
         }
 
         // Vérification de la validité de l'e-mail
-        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailPattern.test(email)) {
             alert("Veuillez entrer une adresse e-mail valide.");
             return false;

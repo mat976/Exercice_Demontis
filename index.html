@@ -18,6 +18,49 @@
         />
     </head>
 
+    <style>
+        .directory-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .directory-link {
+            display: block;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .directory-link:hover {
+            background-color: #e9ecef;
+            transform: translateX(5px);
+            color: var(--primary-color);
+        }
+
+        .directory-link i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .btn-yellow {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: #000;
+            font-weight: 500;
+        }
+        
+        .btn-yellow:hover {
+            background-color: #e6a600;
+            border-color: #e6a600;
+            color: #000;
+        }
+    </style>
+
     <body>
         <header>
             <ul
@@ -37,20 +80,18 @@
             </ul>
         </header>
         <main>
-            <!-- Hover added -->
-            <div class="list-group">
-                <button type="button" class="list-group-item list-group-item-action">
-                    <a href="Tp_1/index.html" style="color: black;">TP : Front Login</a>
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">
-                    <a href="Exo_1/index.html" style="color: black;">Exo 1 : input et bouton</a>
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">
-                    <a href="Exo_2/index.html" style="color: black;">Exo 2 : table and name script</a>
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">
-                    <a href="TP_Javascript_Dom/index.html" style="color: black;">TP : JavaScript Login</a>
-                </button>
+
+            <div class="container">
+                <div class="content-container">
+                    <h2 class="mb-4">Répertoires De Matisse</h2>
+                    <ul class="directory-list">
+                        <li><a href="Tp_1/index.html" class="directory-link"><i class="fas fa-folder"></i>TP : Front Login</a></li>
+                        <li><a href="Exo_1/index.html" class="directory-link"><i class="fas fa-folder"></i>Exo 1 : input et bouton</a></li>
+                        <li><a href="Exo_2/index.html" class="directory-link"><i class="fas fa-folder"></i>Exo 2 : table and name script</a></li>
+                        <li><a href="TP_Javascript_Dom/index.html" class="directory-link"><i class="fas fa-folder"></i>TP : JavaScript Login</a></li>
+                        
+                    </ul>
+                </div>
             </div>
         </main>
         <footer>
