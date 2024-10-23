@@ -16,73 +16,125 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        
     </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            display: flex;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            width: 60%;
+            max-width: 900px;
+        }
+
+        .form-section {
+            padding: 40px;
+            flex: 1;
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-section input {
+            margin-bottom: 20px;
+        }
+
+        .image-section {
+            flex: 1;
+            background: url('https://via.placeholder.com/450') no-repeat center center;
+            background-size: cover;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
 
     <body>
-        <header>
-            <ul
-                class="nav justify-content-center"
-            >
-                <li class="nav-item">
-                    <a class="nav-link active" href="../index.html" aria-current="page"
-                        >Go back</a
-                    >
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/mat976/Exercice_Demontis">Lien vers le github</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Demontis Matisse</a>
-                </li>
-            </ul>
-            
-        </header>
-
-        <form class="container rounded-3 shadow-lg" style="padding: 1%; width: 30%;" onsubmit="return verif();">
+      <div class="login-container">
+    <div class="form-section">
+        <h2>Login</h2>
+        <form onsubmit="return verif();">
             <div class="mb-2">
                 <label for="Nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="Nom" aria-describedby="helpId" placeholder="" />
+                <input type="text" class="form-control" id="Nom" placeholder="Entrez votre nom">
             </div>
-        
+
             <div class="mb-2">
                 <label for="Prenom" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="Prenom" aria-describedby="helpId" placeholder="" />
+                <input type="text" class="form-control" id="Prenom" placeholder="Entrez votre prénom">
             </div>
-        
+
             <div class="mb-2">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelpId" placeholder="abc@mail.com" />
+                <input type="email" class="form-control" id="email" placeholder="abc@mail.com">
             </div>
-        
+
             <div class="mb-2">
                 <label for="Pseudot" class="form-label">Pseudot</label>
-                <input type="text" class="form-control" name="Pseudot" id="Pseudot" aria-describedby="helpId" placeholder="" />
+                <input type="text" class="form-control" id="Pseudot" placeholder="Entrez votre pseudonyme">
             </div>
-        
+
             <div class="mb-2">
                 <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="password" />
+                <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe">
             </div>
-        
+
             <div class="mb-2">
                 <label for="passwordV" class="form-label">Vérification de mot de passe</label>
-                <input type="password" class="form-control" id="passwordV" />
+                <input type="password" class="form-control" id="passwordV" placeholder="Répétez votre mot de passe">
             </div>
-        
-            <div class="d-flex justify-content-start">
-                <button type="submit" class="btn btn-primary">Login</button>
-            </div>
+
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-        
+    </div>
+
+    <div class="image-section">
+        <img src="3094352.jpg" alt="Login Image" width="450" height="800">
+    </div>
+</div>
         <script>
             function verif() {
 
                 // Recup des champ
 
-                var nom = document.getElementById("Nom").value;
-                var prenom = document.getElementById("Prenom").value;
+                var nom = trim(document.getElementById("Nom").value);
+                var prenom = trim(document.getElementById("Prenom").value);
                 var email = document.getElementById("email").value;
-                var pseudot = document.getElementById("Pseudot").value;
+                var pseudot = trim(document.getElementById("Pseudot").value);
 
                 var password = document.getElementById("password").value;
                 var passwordV = document.getElementById("passwordV").value;
