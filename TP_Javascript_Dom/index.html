@@ -1,23 +1,9 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Title</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-
-        <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-        
-    </head>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,9 +68,10 @@
         }
 
     </style>
+</head>
+<body>
 
-    <body>
-      <div class="login-container">
+<div class="login-container">
     <div class="form-section">
         <h2>Login</h2>
         <form onsubmit="return verif();">
@@ -123,72 +110,44 @@
     </div>
 
     <div class="image-section">
-        <img src="3094352.jpg" alt="Login Image" width="450" height="800">
+        <!-- Image is set as background in CSS -->
     </div>
 </div>
-        <script>
-            function verif() {
 
-                // Recup des champ
+<script>
+    function verif() {
+        // Récupération des valeurs des champs avec trim()
+        var nom = document.getElementById("Nom").value.trim();
+        var prenom = document.getElementById("Prenom").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var pseudot = document.getElementById("Pseudot").value.trim();
+        var password = document.getElementById("password").value.trim();
+        var passwordV = document.getElementById("passwordV").value.trim();
 
-                var nom = trim(document.getElementById("Nom").value);
-                var prenom = trim(document.getElementById("Prenom").value);
-                var email = document.getElementById("email").value;
-                var pseudot = trim(document.getElementById("Pseudot").value);
+        // Vérification des champs vides
+        if (!nom || !prenom || !email || !pseudot || !password || !passwordV) {
+            alert("Tous les champs doivent être remplis.");
+            return false;
+        }
 
-                var password = document.getElementById("password").value;
-                var passwordV = document.getElementById("passwordV").value;
-        
-                // verif champ remplis
+        // Vérification de la validité de l'e-mail
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            alert("Veuillez entrer une adresse e-mail valide.");
+            return false;
+        }
 
-                if (!nom || !prenom || !email || !pseudot || !password || !passwordV) {
-                    alert("Tous les champs doivent être remplis.");
+        // Vérification des mots de passe identiques
+        if (password !== passwordV) {
+            alert("Les mots de passe ne correspondent pas.");
+            return false;
+        }
 
+        // Si tout est correct
+        alert("Formulaire validé avec succès !");
+        return true;
+    }
+</script>
 
-                    return false;
-                    }
-        
-                // email valide 
-                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-
-
-                if (!emailPattern.test(email)) {
-
-
-                    alert("Veuillez entrer une adresse e-mail valide.");
-                    return false;
-                    }
-        
-                // mdp pareil
-                if (password !== passwordV) {
-
-
-                    alert("Les mots de passe ne correspondent pas.");
-                    return false;
-            }
-        
-                // Si toutes les vérifications passent
-                alert("Formulaire validé avec succès !");
-                return true;
-            }
-        </script>
-        
-
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
-    </body>
+</body>
 </html>
